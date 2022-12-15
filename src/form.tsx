@@ -15,7 +15,7 @@ function Form(props: Props) {
     const handler = useCallback(async () => {
         const value: string | undefined = ref.current?.value?.toString?.()
         if(value === undefined){
-            console.log('empty')
+            props.handler('error')
             return
         }
         const docRef = doc(db, "users", value);
@@ -24,13 +24,17 @@ function Form(props: Props) {
      
         
         if(docSnap?.exists()){
+            console.log(docSnap.data()?.device, props.visitorId)
             if(docSnap.data()?.device === props.visitorId){
                props.handler('video')
-            }else{
+            }else if(!docSnap.data()?.device){
             await setDoc(docRef, {
                 device: props.visitorId});
+                props.handler('video')
+            }else {
+                props.handler('error')
             }
-            props.handler('video')
+           
         
         }else {
             props.handler('error')
