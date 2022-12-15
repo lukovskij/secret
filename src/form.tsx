@@ -42,7 +42,7 @@ function Form(props: Props) {
         Давай код!
       </h1>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center',width: '100%', padding: '0 16px'}}>
-            <input type="text" ref={ref} style={{height: '32px', width: '100%', border: '1px solid #fff', marginBottom: '16px', marginTop: '16px'}}/>   
+            <input type="text" ref={ref} style={{height: '32px', width: '100%', border: '1px solid red', marginBottom: '16px', marginTop: '16px'}}/>   
             <button type='button' onClick={() => {
                 handler()
             }}>
