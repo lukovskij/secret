@@ -8,7 +8,7 @@ import { storage } from './services/firebase';
 function Video() {
     const [src, setUrl] = useState('')
     useEffect(() => {
-            getDownloadURL(ref(storage,  'fe_vlad.mp4'))
+            getDownloadURL(ref(storage,  'fedchuk_2.mp4'))
   .then((url) => {
     // `url` is the download URL for 'images/stars.jpg'
 
