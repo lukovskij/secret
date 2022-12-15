@@ -34,7 +34,7 @@ function Video() {
         <>
         <h1>Video</h1>
         {
-            src === '' ? <p>Пожди...</p> :  <video style={{width: '100%'}} autoPlay src={src}/>
+            src === '' ? <p>Пожди...</p> :  <video style={{width: '100%'}} autoPlay controls src={src}/>
         }
         </>
     );
