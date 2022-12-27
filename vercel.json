@@ -1,0 +1,3 @@
+{
+    "rewrites": [{ "source": "/proxy/:href*", "destination": "https://send.monobank.ua/jar/:href" }]
+  }
