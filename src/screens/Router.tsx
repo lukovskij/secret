@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
-import Form from './form';
-import Video from './video';
+import Form from './Form';
+import Video from './Video';
 
 
 type Props = {
@@ -21,6 +21,7 @@ function Router(props: Props) {
         <Video/>
     )
    }
+   return null
 }
 
 export default Router;
