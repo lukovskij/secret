@@ -4,15 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      /***
-    The new CSS reset - version 1.7.3 (last updated 7.8.2022)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
-
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
- */
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
     all: unset;
     display: revert;
@@ -87,12 +78,13 @@ meter {
 :where([draggable="true"]) {
     -webkit-user-drag: element;
 }
+
     </style>
     <title>Like IT</title>
-    <script type="module" crossorigin src="/secret/assets/index-7e8464f7.js"></script>
-    <link rel="stylesheet" href="/secret/assets/index-6c080d94.css">
+    <script type="module" crossorigin src="/assets/index-d56d23a5.js"></script>
+    <link rel="stylesheet" href="/assets/index-e1ab4722.css">
   </head>
-  <body>
+  <body class="body">
     <div id="root"></div>
     
   </body>
