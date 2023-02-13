@@ -1,4 +1,4 @@
-import Root from './screens/root.tsx';
+import Root from './screens/root';
 import React from 'react'
 
 
