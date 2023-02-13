@@ -42,7 +42,7 @@ function Form(props: Props) {
     }, [])
     return (
         <div className='form-wr'>
-            <div className='input-wr'><img className='input-icon' src='/public/images/ph_lock.svg'/> <input type="text" ref={ref} className='input' placeholder='Код сюди'/>   </div>
+            <div className='input-wr'><img className='input-icon' src='/images/ph_lock.svg'/> <input type="text" ref={ref} className='input' placeholder='Код сюди'/>   </div>
             <button className='button' type='button' onClick={() => {
                 handler()
             }}>
