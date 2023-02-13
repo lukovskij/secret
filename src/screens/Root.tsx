@@ -14,10 +14,10 @@ function Root() {
 
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div style={{display: 'flex', height: '100vh', width: '100%', justifyContent: 'center', flexDirection: 'column'}}>Завантаження...</div>;
   }
   if (error) {
-    return <div>An error occurred: {error.message}</div>;
+    return <div style={{display: 'flex', height: '100vh', width: '100%', justifyContent: 'center', flexDirection: 'column'}}>Трапилась помилка: {error.message}</div>;
   }
 
   if (data) {
@@ -31,7 +31,7 @@ function Root() {
           <span>Дізнатись скільки зібрано</span> <img className='bug-icon' src='/images/money_bag.png'/>
           </a>
           <a className='link' href='#hello'>
-          <img className='bug-icon-r' src='/images/insta.png'/><span>fedchuk_kava</span>
+          <img className='bug-icon-r' src='/images/instagram.svg'/><span>fedchuk_kava</span>
           </a>
        </div>
        </>

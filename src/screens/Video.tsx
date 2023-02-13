@@ -4,8 +4,11 @@ import { storage } from '../services/firebase';
 
 // const imagesRef = ref(storage, 'fe_vlad.mp4')
 
+type Props = {
+  openMenu: () => void
+}
     
-function Video() {
+function Video(props: Props) {
     const [src, setUrl] = useState('')
     useEffect(() => {
             getDownloadURL(ref(storage,  'fedchuk_2.mp4'))
@@ -35,9 +38,7 @@ function Video() {
         {
             src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls src={src}/>
         }
-        <button className='button button-outline' type='button' onClick={() => {
-                window.location.href = '/'
-            }}>
+        <button className='button button-outline' type='button' onClick={props.openMenu}>
                 Інструкція для глінтвейну
             </button>
         </div>

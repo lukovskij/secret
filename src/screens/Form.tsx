@@ -12,6 +12,7 @@ function Form(props: Props) {
    
 
     const ref = useRef<HTMLInputElement | null>(null)
+    const [state, setState] = useState('')
     const handler = useCallback(async () => {
         const value: string | undefined = ref.current?.value?.toString?.()
         if(value === undefined){
@@ -42,11 +43,11 @@ function Form(props: Props) {
     }, [])
     return (
         <div className='form-wr'>
-            <div className='input-wr'><img className='input-icon' src='/images/ph_lock.svg'/> <input type="text" ref={ref} className='input' placeholder='Код сюди'/>   </div>
-            <button className='button' type='button' onClick={() => {
+            <div className='input-wr'><img className='input-icon' src='/images/ph_lock.svg'/> <input onChange={(e) => setState(e.target.value)} type="text" ref={ref} className='input' placeholder='Код сюди'/>   </div>
+            <button disabled={!Boolean(state?.length)} className='button' type='button' onClick={() => {
                 handler()
             }}>
-                Стартуєм!
+                Го <img src='/public/images/cool.png'/>
             </button>
         </div>
     );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from './Form';
 import Video from './Video';
+import Menu from './Menu';
 
 
 type Props = {
@@ -8,8 +9,11 @@ type Props = {
 }
 
 function Router(props: Props) {
-    const [status, setStatus] = useState<'form' | 'error' | 'video' | 'banka'>('form')
+    const [status, setStatus] = useState<'form' | 'error' | 'video' | 'banka' | 'menu'>('video')
     
+    if(status === 'menu') {
+        return <Menu handler={() => setStatus('video')}/>
+    }
    if(status === 'form' || status === 'error'){
     return <div className='form-wrapper'>
         <Form handler={(status: 'form' | 'error' | 'video')=> setStatus(status)} visitorId={props.visitorId}/>
@@ -18,7 +22,7 @@ function Router(props: Props) {
    }
    if(status === 'video') {
     return (
-        <Video/>
+        <Video openMenu={() => setStatus('menu')}/>
     )
    }
    return null
