@@ -14,7 +14,7 @@ function Form(props: Props) {
     const ref = useRef<HTMLInputElement | null>(null)
     const [state, setState] = useState('')
     const handler = useCallback(async () => {
-        const value: string | undefined = ref.current?.value?.toString?.()
+        const value: string | undefined = ref.current?.value?.toString?.()?.toLowerCase?.()
         if(value === undefined){
             props.handler('error')
             return

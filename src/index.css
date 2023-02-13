@@ -17,8 +17,7 @@ text-align: center;
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
-  min-height: 100vh; 
-min-height: -webkit-fill-available;
+  padding-bottom: 50px; 
 }
 .form-wr {
   display: flex;
@@ -97,10 +96,12 @@ min-height: -webkit-fill-available;
 .footer {
   margin-top: auto;
   width: 100%;
-  margin-bottom: 20px;
   align-items: center;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
 }
 .bug-icon {
   width: 24px;
