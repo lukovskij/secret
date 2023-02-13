@@ -2,6 +2,7 @@
 import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
 
 import Router from './Router'
+import React from 'react'
 
 
 function Root() {
