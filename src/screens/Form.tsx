@@ -41,19 +41,14 @@ function Form(props: Props) {
         }
     }, [])
     return (
-        <>
-         <h1>
-        Давай код!
-      </h1>
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center',width: '100%', padding: '0 16px'}}>
-            <input type="text" ref={ref} style={{height: '32px', width: '100%', border: '1px solid red', marginBottom: '16px', marginTop: '16px'}}/>   
-            <button type='button' onClick={() => {
+        <div className='form-wr'>
+            <div className='input-wr'><img className='input-icon' src='/public/images/ph_lock.svg'/> <input type="text" ref={ref} className='input' placeholder='Код сюди'/>   </div>
+            <button className='button' type='button' onClick={() => {
                 handler()
             }}>
                 Стартуєм!
             </button>
         </div>
-        </>
     );
 }
 

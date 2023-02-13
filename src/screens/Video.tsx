@@ -31,12 +31,16 @@ function Video() {
         
     }, [])
     return (
-        <>
-        <h1>Video</h1>
+        <div className='video'>
         {
-            src === '' ? <p>Пожди...</p> :  <video style={{width: '100%'}} autoPlay controls src={src}/>
+            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls src={src}/>
         }
-        </>
+        <button className='button button-outline' type='button' onClick={() => {
+                window.location.href = '/'
+            }}>
+                Інструкція для глінтвейну
+            </button>
+        </div>
     );
 }
 
