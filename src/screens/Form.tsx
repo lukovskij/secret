@@ -47,7 +47,7 @@ function Form(props: Props) {
             <button disabled={!Boolean(state?.length)} className='button' type='button' onClick={() => {
                 handler()
             }}>
-                Го <img src='/public/images/cool.png'/>
+                Го <img src='/images/cool.png'/>
             </button>
         </div>
     );
