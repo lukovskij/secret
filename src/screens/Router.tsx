@@ -9,7 +9,7 @@ type Props = {
 }
 
 function Router(props: Props) {
-    const [status, setStatus] = useState<'form' | 'error' | 'video' | 'banka' | 'menu'>('video')
+    const [status, setStatus] = useState<'form' | 'error' | 'video' | 'banka' | 'menu'>('form')
     
     if(status === 'menu') {
         return <Menu handler={() => setStatus('video')}/>
