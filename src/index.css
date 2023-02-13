@@ -93,10 +93,6 @@ min-height: -webkit-fill-available;
   border: 1px solid #fff;
 }
 
-.button:disabled {
-  background-color: #5B5555;
-  color: #A8ABAC;
-}
 
 .footer {
   margin-top: auto;
