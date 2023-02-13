@@ -27,7 +27,7 @@ function Root() {
       <img src='/images/logo.svg' className='logo'/>
        <Router visitorId={data.visitorId}/>
        <div className='footer'>
-          <a className='link' href='#hello'>
+       <a className='link' href='#hello'>
           <span>Дізнатись скільки зібрано</span> <img className='bug-icon' src='/images/money_bag.png'/>
           </a>
           <a className='link' href='#hello'>
