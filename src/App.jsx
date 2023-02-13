@@ -1,4 +1,4 @@
-import Root from './screens/root';
+import Root from './screens/Root';
 import React from 'react'
 
 
