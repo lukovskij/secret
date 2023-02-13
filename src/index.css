@@ -42,11 +42,15 @@ text-align: center;
   padding-left: 46px;
   color: #fff;
   text-transform: uppercase;
-  border: 1px solid #fff;
+  text-align: left;
   border-radius: 3px;
+  border: 1px solid transparent
 }
 .input::placeholder{
   color: #A5A8A9;
+}
+.input:focus {
+  border-color: rgba(255,255,255, .5)
 }
 
 .input-wr{
