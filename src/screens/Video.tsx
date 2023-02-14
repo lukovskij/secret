@@ -35,12 +35,18 @@ function Video(props: Props) {
     }, [])
     return (
         <div className='video'>
-        {
+          <h6 style={{width: '100%', height: '40vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', fontSize: '24px'}}>
+          <div>Тут скоро щось буде <img src="/images/tss.png" className='smile'/></div>
+          </h6>
+        {/* {
             src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls src={src}/>
-        }
+        } */}
+        <div>
+        А поки насолоджуйся <img src="/images/love.png" className='smile'/>
         <button className='button button-outline' type='button' onClick={props.openMenu}>
                 Інструкція для глінтвейну
             </button>
+            </div>
         </div>
     );
 }
