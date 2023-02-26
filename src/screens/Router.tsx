@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from './Form';
 import Video from './Video';
 import Menu from './Menu';
+import { useIsSafari } from '../helpers';
 
 
 type Props = {
@@ -10,6 +11,7 @@ type Props = {
 
 function Router(props: Props) {
     const [status, setStatus] = useState<'form' | 'error' | 'video' | 'banka' | 'menu'>('form')
+    const isSafari = useIsSafari()
     
     if(status === 'menu') {
         return <Menu handler={() => setStatus('video')}/>
@@ -22,7 +24,7 @@ function Router(props: Props) {
    }
    if(status === 'video') {
     return (
-        <Video openMenu={() => setStatus('menu')}/>
+        <Video isSafari={isSafari} openMenu={() => setStatus('menu')}/>
     )
    }
    return null
