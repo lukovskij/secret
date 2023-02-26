@@ -7,7 +7,6 @@ import { isSafari } from '../helpers';
 
 type Props = {
   openMenu: () => void
-  isSafari: boolean | null
 }
 
 const setItemLS = (key: string, value: any) => {
@@ -64,7 +63,7 @@ function Video(props: Props) {
     return (
         <div className='video'>
         {
-            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls={Boolean(props.isSafari)} src={src}/>
+            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls={isSafari()} src={src}/>
         }
         <div>
         <button className='button button-outline' type='button' onClick={props.openMenu}>
