@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {  ref, getDownloadURL } from "firebase/storage";
 import { storage } from '../services/firebase';
-import { isSafari } from '../helpers';
+
 
 // const imagesRef = ref(storage, 'fe_vlad.mp4')
 
@@ -63,7 +63,7 @@ function Video(props: Props) {
     return (
         <div className='video'>
         {
-            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls={isSafari()} src={src}/>
+            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls controlsList="nodownload" src={src}/>
         }
         <div>
         <button className='button button-outline' type='button' onClick={props.openMenu}>
