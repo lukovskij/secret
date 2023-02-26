@@ -63,7 +63,7 @@ function Video(props: Props) {
     return (
         <div className='video'>
         {
-            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls controlsList="nodownload" src={src}/>
+            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls playsInline controlsList="nodownload" src={src}/>
         }
         <div>
         <button className='button button-outline' type='button' onClick={props.openMenu}>
