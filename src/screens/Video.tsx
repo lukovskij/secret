@@ -50,7 +50,7 @@ function Video(props: Props) {
     xhr.send();
 
     // Or inserted into an <img> element
-    console.log(url, 'url')
+
     let counter = ls_counter >= 3 ? 1 : ls_counter+1
     
     setItemLS('VID', counter)
