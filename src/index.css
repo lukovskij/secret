@@ -125,6 +125,7 @@ text-align: center;
 
 .video {
   padding: 0 16px;
+  margin: auto 0;
 }
 
 .form-wrapper {

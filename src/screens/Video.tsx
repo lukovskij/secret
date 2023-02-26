@@ -7,11 +7,34 @@ import { storage } from '../services/firebase';
 type Props = {
   openMenu: () => void
 }
-    
+
+const setItemLS = (key: string, value: any) => {
+  try {
+
+    window.localStorage.setItem(key, JSON.stringify(value))
+
+  }catch (err) {
+    console.log(err)
+  }
+}
+
+const getItemLS = (key: string) => {
+  try {
+   const value = JSON.parse(window.localStorage.getItem(key) || '1')
+   return value
+  }
+  catch (err) {
+    console.log(err)
+    return 1
+  }
+}
+
 function Video(props: Props) {
     const [src, setUrl] = useState('')
     useEffect(() => {
-            getDownloadURL(ref(storage,  'fedchuk_2.mp4'))
+      const ls_counter = getItemLS('VID')
+
+            getDownloadURL(ref(storage,  `f_${ls_counter}.mp4`))
   .then((url) => {
     // `url` is the download URL for 'images/stars.jpg'
 
@@ -26,6 +49,9 @@ function Video(props: Props) {
 
     // Or inserted into an <img> element
     console.log(url, 'url')
+    let counter = ls_counter >= 3 ? 1 : ls_counter+1
+    
+    setItemLS('VID', counter)
     setUrl(url)
   })
   .catch((error) => {
@@ -35,14 +61,10 @@ function Video(props: Props) {
     }, [])
     return (
         <div className='video'>
-          <h6 style={{width: '100%', height: '40vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', fontSize: '24px'}}>
-          <div>Тут скоро щось буде <img src="/images/tss.png" className='smile'/></div>
-          </h6>
-        {/* {
-            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay controls src={src}/>
-        } */}
+        {
+            src === '' ? <p>Завантаження...</p> :  <video style={{width: '100%', height: 'auto', maxHeight: '70vh'}} autoPlay  src={src}/>
+        }
         <div>
-        А поки насолоджуйся <img src="/images/love.png" className='smile'/>
         <button className='button button-outline' type='button' onClick={props.openMenu}>
                 Інструкція для глінтвейну
             </button>
